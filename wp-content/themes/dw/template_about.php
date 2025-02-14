@@ -1,7 +1,9 @@
+<?php /* Template Name: Pafege "À propos"*/ ?>
+
 <?php get_header(); ?>
 
         <aside>
-            <h2>Bienvenue sur mon site&nbsp;!</h2>
+            <h2>A propos de moi</h2>
         </aside>
         <?php 
         //on ouvre la boucle (the loop), structure de controle de contenue propre à wordpress

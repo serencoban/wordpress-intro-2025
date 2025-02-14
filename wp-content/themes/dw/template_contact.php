@@ -1,7 +1,9 @@
+<?php /* Template Name: Pafege "Contact"*/ ?>
+
 <?php get_header(); ?>
 
         <aside>
-            <h2>Bienvenue sur mon site&nbsp;!</h2>
+            <h2>Contactez-moi</h2>
         </aside>
         <?php 
         //on ouvre la boucle (the loop), structure de controle de contenue propre à wordpress
