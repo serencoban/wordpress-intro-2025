@@ -1,20 +1,16 @@
 <?php get_header(); ?>
+    <?php 
+    // On ouvre "la boucle" (The Loop), la structure de contrôle
+    // de contenu propre à Wordpress:
+    if(have_posts()): while(have_posts()): the_post(); ?>
 
-        <aside>
-            <h2>Bienvenue sur mon site&nbsp;!</h2>
-        </aside>
-        <?php 
-        //on ouvre la boucle (the loop), structure de controle de contenue propre à wordpress
-        if (have_posts()) : while (have_posts()) : the_post(); ?>
+        <h2><?= get_the_title(); ?></h2>
 
         <div><?= get_the_content(); ?></div>
 
-
-        <?php
-        //on ferme la boucle the loop
-
-        endwhile; else: ?>
-        <p>la page est vide</p>
-        <?php endif; ?>
-
+    <?php
+    // On ferme "la boucle" (The Loop):
+    endwhile; else: ?>
+    <p>La page est vide.</p>
+    <?php endif; ?>
 <?php get_footer(); ?>
