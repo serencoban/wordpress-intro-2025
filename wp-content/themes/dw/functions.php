@@ -22,4 +22,19 @@ add_action( 'wp_enqueue_scripts', function() {            //unqueue : au momemen
     wp_dequeue_style( 'global-styles' );
 }, 20 );
 
+//Activer l'utilisation ds vignettes sur nos post types
+add_theme_support('post-thumbnails', ['recipe']);
 
+// enregistrer de nouveaux types de contenue qui seront stockés dans la table "wp_posts" avec un identifiant du type spécifique dans la colonne "post_type"
+
+register_post_type('recipe', [
+    'label' => 'Recettes',
+    'description' => 'Les recettes liées à nos voyages',
+    'menu_position' => 6,
+    'menu_icon' => 'dashicons-food',
+    'public' => true,
+    'rewrite' => [
+        'slug' => 'recettes'     // changement du slug dans l'url sur wordpress
+    ],
+    'supports'=>['title', 'editor', 'excerpt', 'thumbnail'],
+]);
