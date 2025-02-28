@@ -23,7 +23,7 @@ add_action( 'wp_enqueue_scripts', function() {            //unqueue : au momemen
 }, 20 );
 
 //Activer l'utilisation ds vignettes sur nos post types
-add_theme_support('post-thumbnails', ['recipe']);
+add_theme_support('post-thumbnails', ['recipe', 'travel']);
 
 // enregistrer de nouveaux types de contenue qui seront stockés dans la table "wp_posts" avec un identifiant du type spécifique dans la colonne "post_type"
 
@@ -35,6 +35,19 @@ register_post_type('recipe', [
     'public' => true,
     'rewrite' => [
         'slug' => 'recettes'     // changement du slug dans l'url sur wordpress
+    ],
+    'supports'=>['title', 'editor', 'excerpt', 'thumbnail'],
+]);
+
+
+register_post_type('travel', [
+    'label' => 'Voyages',
+    'description' => 'Les voyages que nous avons réalisés',
+    'menu_position' => 7,
+    'menu_icon' => 'dashicons-airplane',
+    'public' => true,
+    'rewrite' => [
+        'slug' => 'voyages'     // changement du slug dans l'url sur wordpress
     ],
     'supports'=>['title', 'editor', 'excerpt', 'thumbnail'],
 ]);
